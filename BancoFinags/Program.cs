@@ -1,15 +1,33 @@
-﻿using System;
+﻿using BancoFinags.Models;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BancoFinags
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            List<Conta> contas = new List<Conta>();
+
+            CriarContas(contas);
+            MostrarContas(contas);
+        }
+        public static void CriarContas(List<Conta> contas) 
+        {
+            Conta conta = new Conta(1, "Lucas", 2000);
+            contas.Add(conta);
+            conta = new Conta(2, "JmDelas", 2000);
+            contas.Add(conta);
+        }
+        public static void  MostrarContas(List<Conta> contas)
+        {
+            foreach (Conta c in contas)
+            {
+                Console.WriteLine(c);
+            }
+            Console.ReadKey();
         }
     }
 }
