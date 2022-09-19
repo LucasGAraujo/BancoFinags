@@ -1,11 +1,12 @@
 ﻿using BancoFinags.Models;
+using BancoFinags
 using System;
 using System.Collections.Generic;
 
 
 namespace BancoFinags
 {
-    internal class Program
+    public class Program
     {
         public static void Main(string[] args)
         {
@@ -14,15 +15,14 @@ namespace BancoFinags
             CriarContas(contas);
             IncluirConta(contas);
             MostrarContas(contas);
+            
         }
+
         public static void IncluirConta(List<Conta> contas)
         {
-            Console.Write("Entre com o Numero da Conta: ");
-            int num = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Entre com o Nome: ");
-            string nome = Console.ReadLine();
-            Console.Write("Entre com o Saldo: ");
-            double saldo = Convert.ToDouble(Console.ReadLine());
+            int num = Utils.EntrarNumero();
+            string nome = Utils.EntrarNome();
+            double saldo = Utils.EntrarSaldo();
             contas.Add(new Conta(num, nome, saldo));
         }
         public static void AlterarConta()

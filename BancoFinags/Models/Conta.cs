@@ -12,6 +12,7 @@ namespace BancoFinags.Models
         public string Nome { get; set; }
         public double Saldo { get; set; }
 
+
         public Conta() { }
         public Conta(int id, string nome, double saldo)
         {
