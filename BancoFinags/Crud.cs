@@ -5,6 +5,8 @@ using static BancoFinags.Utils;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using static BancoFinags.CrudBD;
 
 namespace BancoFinags
 {
@@ -55,17 +57,19 @@ namespace BancoFinags
         contas.Remove(contas[pos]);
     }
 
-    public static void ExibirConta(List<Conta> contas)
+    public static void ExibirConta(SqlConnection sqlConn)
     {
 
         int num = EntrarConta();
-        int pos = PesquisarConta(contas, num);
-        if (pos == -1)
-        {
-            Console.WriteLine("Erro: conta não existe");
-            return;
-        }
-        Console.WriteLine(contas[pos]);
+            Conta conta = ConsultarContaBD(sqlConn, num);
+        if (conta != null) {
+                Console.WriteLine(conta); 
+            }
+            else
+            {
+                Console.WriteLine("Erro: Conta não encontrada");
+            }
     }
+
 }
 }
