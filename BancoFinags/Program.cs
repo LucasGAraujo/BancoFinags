@@ -19,10 +19,10 @@ namespace BancoFinags
                 Console.WriteLine("Error: Conexão com o banco ");
                 return;
             }
-            
-            ExibirConta(sqlConn);
+            ExibirContas(sqlConn);
+            AlterarConta(sqlConn);
+            ExcluirConta(sqlConn);
             FecharConexao(sqlConn);
-            
         }
 
     }

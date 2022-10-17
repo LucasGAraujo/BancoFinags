@@ -7,7 +7,6 @@ namespace BancoFinags
 {
     public static class Utils
     {
-
         public static int EntrarConta()
         {
             int num = 0;
@@ -34,7 +33,6 @@ namespace BancoFinags
             } while (!ok);
             return num;
         }
-
         public static int EntrarInteiro(string msg)
         {
             int num = 0;
@@ -55,7 +53,6 @@ namespace BancoFinags
             } while (!ok);
             return num;
         }
-
         public static string EntrarNome()
         {
             string nome = "";
@@ -79,7 +76,6 @@ namespace BancoFinags
             } while (!ok);
             return nome;
         }
-
         public static double EntrarReal(string msg)
         {
             double num = 0;
@@ -100,7 +96,6 @@ namespace BancoFinags
             } while (!ok);
             return num;
         }
-
         public static double EntrarRealPositivo(string msg)
         {
             double saldo = 0;
@@ -120,7 +115,6 @@ namespace BancoFinags
             } while (!ok);
             return saldo;
         }
-
         public static int PesquisarConta(List<Conta> contas, int num)
         {
             int achou = -1;
@@ -135,7 +129,6 @@ namespace BancoFinags
             }
             return achou;
         }
-
         public static int EntrarOperacao(string msg)
         {
             bool ok = false;
