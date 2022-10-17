@@ -76,6 +76,5 @@ namespace BancoFinags
                 Console.WriteLine(conta);
             }
         }
-
 }
 }
